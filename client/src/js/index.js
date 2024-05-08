@@ -31,3 +31,10 @@ if ('serviceWorker' in navigator) {
 } else {
   console.error('Service workers are not supported in this browser.');
 }
+
+// const tx = db.transaction(storeName, 'readwrite');
+// await Promise.all([
+//   tx.store.put('bar', 'foo'),
+//   tx.store.put('world', 'hello'),
+//   tx.done,
+// ]);
