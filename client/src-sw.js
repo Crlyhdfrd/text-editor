@@ -31,7 +31,7 @@ registerRoute();
 
 
 // registerRoute(
-//   ({ request }) => request.destination === "image",
+//   ({ request }) => request.destination === "logo",
 //   new CacheFirst({
 //     cacheName: "my-image-cache",
 //     plugins: [
