@@ -24,7 +24,7 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'sw.js',
+        swDest: 'src-sw.js',
       }),
         
       new WebpackPwaManifest({
@@ -39,7 +39,12 @@ module.exports = () => {
             sizes: [96, 128, 192, 256, 384, 512],
           }
         ]
-      })
+      }),
+      // new CopyWebpackPlugin({
+      //   patterns: [
+      //     { from: 'src-sw.js', to: 'src-sw.js' },
+      //   ],
+      // }),
 
       ],
 
@@ -57,6 +62,13 @@ module.exports = () => {
             options: {
               presets: ['@babel/preset-env'],
             },
+          },
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[hash][ext]',
           },
         }
         
